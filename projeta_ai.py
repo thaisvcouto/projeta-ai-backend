@@ -16,10 +16,6 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 data_e_hora_atuais = datetime.now()
 data_e_hora_em_texto = data_e_hora_atuais.strftime("%d-%m-%Y %H:%M")
 
-@app.route('/')
-def index():
-    return render_template("index.html")
-
 #Função para enviar prompt para o ChatGPT e retornar a sua resposta (gerar o projeto)
 def chat_with_gpt(prompt):
     response = client.chat.completions.create(
